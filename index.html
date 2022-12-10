@@ -62,22 +62,25 @@
                 <!-- Preview Image -->
                 <div class="relative">
                     <div class="absolute z-0">
-                        <span class="font-extrabold text-[220px] text-darkGrey tracking-[-0.06em] leading-[101%]">
-                            <span>
+                        <div class="font-extrabold text-[220px] text-darkGrey tracking-[-0.06em] leading-[101%]">
+                            <div data-aos="fade-right" data-aos-delay="300">
                                 NEW
-                            </span>
-                            <span>
+                            </div>
+                            <div data-aos="fade-left" data-aos-delay="600">
                                 PORSCHE
-                            </span>
-                        </span>
+                            </div>
+                        </div>
                     </div>
-                    <img src="./public/assets/images/porsche.webp" class="w-full max-w-[963px] z-10 relative" alt="">
+                    <img src="./public/assets/images/porsche.webp" class="w-full max-w-[963px] z-10 relative" alt=""
+                        data-aos="zoom-in" data-aos-delay="950">
                 </div>
 
                 <div class="flex flex-col md:flex-row items-center justify-around lg:gap-[60px] gap-7">
                     <!-- Car Details -->
-                    <div class="grid grid-cols-4 gap-y-12 items-center divide-x-[1px] divide-grey">
-                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10">
+                    <!-- <div class="grid items-center grid-cols-4 gap-y-12"> -->
+                    <div class="flex items-center gap-y-12">
+                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10" data-aos="fade-left"
+                            data-aos-delay="1400">
                             <h6 class="font-bold text-dark text-xl md:text-[26px] text-center">
                                 380
                             </h6>
@@ -85,7 +88,9 @@
                                 Horse Power
                             </p>
                         </div>
-                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10">
+                        <span class="vr" data-aos="fade-left" data-aos-delay="1600"></span>
+                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10" data-aos="fade-left"
+                            data-aos-delay="1900">
                             <h6 class="font-bold text-dark text-xl md:text-[26px] text-center">
                                 12S
                             </h6>
@@ -93,7 +98,9 @@
                                 Speed AT
                             </p>
                         </div>
-                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10">
+                        <span class="vr" data-aos="fade-left" data-aos-delay="2100"></span>
+                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10" data-aos="fade-left"
+                            data-aos-delay="2400">
                             <h6 class="font-bold text-dark text-xl md:text-[26px] text-center">
                                 AWD
                             </h6>
@@ -101,7 +108,9 @@
                                 Drive
                             </p>
                         </div>
-                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10">
+                        <span class="vr" data-aos="fade-left" data-aos-delay="2600"></span>
+                        <div class="flex flex-col items-center gap-[2px] px-3 md:px-10" data-aos="fade-left"
+                            data-aos-delay="2900">
                             <h6 class="font-bold text-dark text-xl md:text-[26px] text-center">
                                 A.I
                             </h6>
@@ -111,7 +120,7 @@
                         </div>
                     </div>
                     <!-- Button Primary -->
-                    <div class="p-1 rounded-full bg-primary group">
+                    <div class="p-1 rounded-full bg-primary group" data-aos="zoom-in" data-aos-delay="3400">
                         <a href="#!" class="btn-primary">
                             <p class="transition-all duration-[320ms] translate-x-3 group-hover:-translate-x-1">
                                 Rent Now
@@ -461,7 +470,7 @@
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
-            AOS.init();
+            AOS.init({ once: true, duration: 300, easing: 'ease-out' });
         </script>
         <script src="./public/scripts/script.js"></script>
     </body>
