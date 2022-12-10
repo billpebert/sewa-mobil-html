@@ -9,13 +9,16 @@ $(document).ready(function () {
 		});
 	});
 
+	// FAQ
 	var buttonFaq = document.querySelectorAll(".button-faq");
 	for (let index = 0; index < buttonFaq.length; index++) {
 		buttonFaq[index].addEventListener("click", (e) => {
+			e.preventDefault();
 			var idButton = e.currentTarget.getAttribute("id");
 			var faqContent = document.querySelector(`#${idButton}-content`);
-			// console.log(faqContent);
+			// Toggle faq content
 			faqContent.classList.toggle("hidden");
+			// Rotate arrow
 			document.querySelector(`#${idButton} img`).classList.toggle("rotate-180");
 		});
 	}
