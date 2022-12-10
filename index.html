@@ -8,6 +8,8 @@
         <title>Landing Page</title>
 
         <link rel="stylesheet" href="./public/css/main.css">
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
 
     <body>
@@ -58,7 +60,19 @@
         <section class="container relative pb-[100px]">
             <div class="flex flex-col items-center justify-center gap-[30px]">
                 <!-- Preview Image -->
-                <img src="./public/assets/images/preview-car.webp" class="w-full max-w-[963px]" alt="">
+                <div class="relative">
+                    <div class="absolute z-0">
+                        <span class="font-extrabold text-[220px] text-darkGrey tracking-[-0.06em] leading-[101%]">
+                            <span>
+                                NEW
+                            </span>
+                            <span>
+                                PORSCHE
+                            </span>
+                        </span>
+                    </div>
+                    <img src="./public/assets/images/porsche.webp" class="w-full max-w-[963px] z-10 relative" alt="">
+                </div>
 
                 <div class="flex flex-col md:flex-row items-center justify-around lg:gap-[60px] gap-7">
                     <!-- Car Details -->
@@ -445,8 +459,10 @@
             </p>
         </footer>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
         <script src="./public/scripts/script.js"></script>
     </body>
 
