@@ -795,6 +795,14 @@ body{
   z-index: 10;
 }
 
+.col-span-8{
+  grid-column: span 8 / span 8;
+}
+
+.col-span-4{
+  grid-column: span 4 / span 4;
+}
+
 .float-right{
   float: right;
 }
@@ -858,6 +866,10 @@ body{
 
 .mt-2{
   margin-top: 0.5rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
 }
 
 .box-border{
@@ -1358,6 +1370,10 @@ body{
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-cols-12{
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 .flex-row{
   flex-direction: row;
 }
@@ -1552,6 +1568,10 @@ body{
 
 .gap-8{
   gap: 2rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .gap-y-12{
@@ -1864,6 +1884,14 @@ body{
   border-radius: 0.25rem;
 }
 
+.rounded-\[30px\]{
+  border-radius: 30px;
+}
+
+.rounded-3xl{
+  border-radius: 1.5rem;
+}
+
 .rounded-t{
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -1984,6 +2012,16 @@ body{
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-grey{
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 216 228 / var(--tw-bg-opacity));
+}
+
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .decoration-slice{
   -webkit-box-decoration-break: slice;
           box-decoration-break: slice;
@@ -2102,6 +2140,14 @@ body{
   padding: 19px;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
+.p-5{
+  padding: 1.25rem;
+}
+
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2127,6 +2173,16 @@ body{
   padding-bottom: 5rem;
 }
 
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-\[70px\]{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
 .pt-4{
   padding-top: 1rem;
 }
@@ -2141,6 +2197,18 @@ body{
 
 .pt-\[100px\]{
   padding-top: 100px;
+}
+
+.pt-\[30px\]{
+  padding-top: 30px;
+}
+
+.pr-5{
+  padding-right: 1.25rem;
+}
+
+.pb-\[30px\]{
+  padding-bottom: 30px;
 }
 
 .text-left{
@@ -2703,6 +2771,21 @@ body[data-aos-delay='3400'] [data-aos],
   transition-delay: 3400ms;
 }
 
+.after\:content-\[\'\/\'\]::after{
+  --tw-content: '/';
+  content: var(--tw-content);
+}
+
+.last\:after\:content-\[\'\'\]:last-child::after{
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.last\:after\:content-none:last-child::after{
+  --tw-content: none;
+  content: var(--tw-content);
+}
+
 .hover\:font-bold:hover{
   font-weight: 700;
 }
@@ -2815,6 +2898,14 @@ body[data-aos-delay='3400'] [data-aos],
     padding-right: 2.5rem;
   }
 
+  .md\:pt-\[100px\]{
+    padding-top: 100px;
+  }
+
+  .md\:pb-\[70px\]{
+    padding-bottom: 70px;
+  }
+
   .md\:text-\[26px\]{
     font-size: 26px;
   }
@@ -2826,6 +2917,11 @@ body[data-aos-delay='3400'] [data-aos],
 }
 
 @media (min-width: 1024px){
+  .lg\:my-10{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
   .lg\:mt-0{
     margin-top: 0px;
   }
@@ -2885,4 +2981,9 @@ body[data-aos-delay='3400'] [data-aos],
       paint-order: markers;
     }
   }
+}
+
+.\[\&\:not\(\:last-child\)\]\:after\:content-\[\'\/\'\]:not(:last-child)::after{
+  --tw-content: '/';
+  content: var(--tw-content);
 }
