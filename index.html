@@ -114,7 +114,7 @@
                 </header>
 
                 <!-- Cars -->
-                <div class="flex gap-[29px] justify-start">
+                <div class="grid md:grid-cols-4 gap-[29px]">
                     <!-- Card -->
                     <div class="p-4 bg-white rounded-[22px] flex flex-col gap-4">
                         <div>
@@ -123,8 +123,8 @@
                             </h5>
                             <p class="text-sm font-normal text-secondary">Electric Car</p>
                         </div>
-                        <img src="./public/assets/images/car-01.webp" class="rounded-[18px] max-w-[216px] h-[150px]"
-                            alt="">
+                        <img src="./public/assets/images/car-01.webp"
+                            class="rounded-[18px] min-w-[216px] w-full h-[150px]" alt="">
                         <div class="flex items-center justify-between gap-1">
                             <!-- Price -->
                             <p class="text-sm font-normal text-secondary">
@@ -145,8 +145,8 @@
                             </h5>
                             <p class="text-sm font-normal text-secondary">Sport Car</p>
                         </div>
-                        <img src="./public/assets/images/car-02.webp" class="rounded-[18px] max-w-[216px] h-[150px]"
-                            alt="">
+                        <img src="./public/assets/images/car-02.webp"
+                            class="rounded-[18px] min-w-[216px] w-full h-[150px]" alt="">
                         <div class="flex items-center justify-between gap-1">
                             <!-- Price -->
                             <p class="text-sm font-normal text-secondary">
@@ -167,8 +167,8 @@
                             </h5>
                             <p class="text-sm font-normal text-secondary">Family Car</p>
                         </div>
-                        <img src="./public/assets/images/car-03.webp" class="rounded-[18px] max-w-[216px] h-[150px]"
-                            alt="">
+                        <img src="./public/assets/images/car-03.webp"
+                            class="rounded-[18px] min-w-[216px] w-full h-[150px]" alt="">
                         <div class="flex items-center justify-between gap-1">
                             <!-- Price -->
                             <p class="text-sm font-normal text-secondary">
@@ -189,8 +189,8 @@
                             </h5>
                             <p class="text-sm font-normal text-secondary">Race Car</p>
                         </div>
-                        <img src="./public/assets/images/car-04.webp" class="rounded-[18px] max-w-[216px] h-[150px]"
-                            alt="">
+                        <img src="./public/assets/images/car-04.webp"
+                            class="rounded-[18px] min-w-[216px] w-full h-[150px]" alt="">
                         <div class="flex items-center justify-between gap-1">
                             <!-- Price -->
                             <p class="text-sm font-normal text-secondary">
@@ -285,13 +285,14 @@
                 <p class="text-base text-secondary">Learn more about Vrom and get a success</p>
             </header>
 
+            <!-- Questions -->
             <div class="grid md:grid-cols-2 gap-x-[50px] gap-y-6">
-                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey button-faq" id="faq1">
+                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey h-min button-faq" id="faq1">
                     <div class="flex items-center justify-between gap-1">
                         <p class="text-base font-semibold text-dark">
                             What if I crash the car?
                         </p>
-                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" alt="">
+                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" class="transition-all" alt="">
                     </div>
                     <div class="hidden pt-4 pb-16" id="faq1-content">
                         <p class="text-base text-dark leading-[26px]">
@@ -301,14 +302,74 @@
                         </p>
                     </div>
                 </a>
-                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey button-faq" id="faq2">
+                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey h-min button-faq" id="faq2">
                     <div class="flex items-center justify-between gap-1">
                         <p class="text-base font-semibold text-dark">
                             What if I crash the car?
                         </p>
-                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" alt="">
+                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" class="transition-all" alt="">
                     </div>
                     <div class="hidden pt-4 pb-16" id="faq2-content">
+                        <p class="text-base text-dark leading-[26px]">
+                            Ipsum top talent busy making race that
+                            agreed both party. You can si amet lorem
+                            dolor get the rewards after winninng.
+                        </p>
+                    </div>
+                </a>
+                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey h-min button-faq" id="faq3">
+                    <div class="flex items-center justify-between gap-1">
+                        <p class="text-base font-semibold text-dark">
+                            What if I crash the car?
+                        </p>
+                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" class="transition-all" alt="">
+                    </div>
+                    <div class="hidden pt-4 pb-16" id="faq3-content">
+                        <p class="text-base text-dark leading-[26px]">
+                            Ipsum top talent busy making race that
+                            agreed both party. You can si amet lorem
+                            dolor get the rewards after winninng.
+                        </p>
+                    </div>
+                </a>
+                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey h-min button-faq" id="faq4">
+                    <div class="flex items-center justify-between gap-1">
+                        <p class="text-base font-semibold text-dark">
+                            What if I crash the car?
+                        </p>
+                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" class="transition-all" alt="">
+                    </div>
+                    <div class="hidden pt-4 pb-16" id="faq4-content">
+                        <p class="text-base text-dark leading-[26px]">
+                            Ipsum top talent busy making race that
+                            agreed both party. You can si amet lorem
+                            dolor get the rewards after winninng.
+                        </p>
+                    </div>
+                </a>
+                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey h-min button-faq" id="faq5">
+                    <div class="flex items-center justify-between gap-1">
+                        <p class="text-base font-semibold text-dark">
+                            What if I crash the car?
+                        </p>
+                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" class="transition-all" alt="">
+                    </div>
+                    <div class="hidden pt-4 pb-16" id="faq5-content">
+                        <p class="text-base text-dark leading-[26px]">
+                            Ipsum top talent busy making race that
+                            agreed both party. You can si amet lorem
+                            dolor get the rewards after winninng.
+                        </p>
+                    </div>
+                </a>
+                <a href="#!" class="px-6 py-4 rounded-[24px] outline outline-1 outline-grey h-min button-faq" id="faq6">
+                    <div class="flex items-center justify-between gap-1">
+                        <p class="text-base font-semibold text-dark">
+                            What if I crash the car?
+                        </p>
+                        <img src="./public/assets/svgs/ic-chevron-down-rounded.svg" class="transition-all" alt="">
+                    </div>
+                    <div class="hidden pt-4 pb-16" id="faq6-content">
                         <p class="text-base text-dark leading-[26px]">
                             Ipsum top talent busy making race that
                             agreed both party. You can si amet lorem
