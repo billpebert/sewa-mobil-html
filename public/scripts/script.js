@@ -1,3 +1,4 @@
+// Navbar Toggler
 var navbarToggler = document.getElementById("navbarToggler");
 var navbarMenu = document.getElementById("navigation");
 navbarToggler.addEventListener("click", (e) => {

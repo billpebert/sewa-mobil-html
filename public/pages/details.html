@@ -5,15 +5,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Landing Page</title>
+        <title>Details</title>
 
         <link rel="stylesheet" href="../css/main.css">
-
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
 
     <body>
-        <nav class="container relative mt-4 lg:my-10">
+        <nav class="container relative my-4 lg:my-10">
             <div class="flex flex-col justify-between w-full lg:flex-row lg:items-center">
                 <!-- Logo & Toggler Button here -->
                 <div class="flex items-center justify-between">
@@ -59,6 +57,7 @@
         <!-- Main Content -->
         <section class="bg-darkGrey relative py-[70px]">
             <div class="container">
+                <!-- Breadcrumb -->
                 <ul class="flex items-center gap-5 mb-[50px]">
                     <li
                         class="text-secondary font-normal text-base capitalize after:content-['/'] last:after:content-none inline-flex gap-5">
@@ -73,15 +72,104 @@
                         Details
                     </li>
                 </ul>
+
                 <div class="grid grid-cols-12 gap-[30px]">
-                    <div class="col-span-8">
-                        <div class="bg-white p-4 rounded-[30px]">
-                            test
+                    <!-- Car Preview -->
+                    <div class="col-span-12 lg:col-span-8">
+                        <div class="bg-white p-4 rounded-[30px] flex flex-col gap-4" id="gallery">
+                            <img :src="thumbnails[activeThumbnail].url" :key="thumbnails[activeThumbnail].id"
+                                class="md:h-[490px] rounded-[18px] h-auto w-full" alt="">
+                            <div class="grid items-center grid-cols-4 gap-3 md:gap-5">
+                                <div v-for="(thumbnail, index) in thumbnails" :key="thumbnail.id">
+                                    <a href="#!" @click="changeActive(index)">
+                                        <img :src="thumbnail.url" alt="" class="thumbnail"
+                                            :class="{selected: index == activeThumbnail}">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-span-4">
+
+                    <!-- Details -->
+                    <div class="col-span-12 md:col-start-5 lg:col-start-auto md:col-span-8 lg:col-span-4">
                         <div class="bg-white p-5 pb-[30px] rounded-3xl">
-                            test
+                            <div class="flex flex-col divide-y divide-grey">
+                                <!-- Name, Category, Rating -->
+                                <div class="max-w-[230px] pb-5">
+                                    <h1 class="font-bold text-[28px] leading-[42px] text-dark mb-[6px]">
+                                        Porsche Taycan Mattic 67S
+                                    </h1>
+                                    <p class="text-secondary font-normal text-base mb-[10px]">Sport Car</p>
+                                    <div class="flex items-center gap-2">
+                                        <span class="flex items-center gap-1">
+                                            <img src="../assets/svgs/ic-star.svg" class="h-[22px] w-[22px]" alt="">
+                                            <img src="../assets/svgs/ic-star.svg" class="h-[22px] w-[22px]" alt="">
+                                            <img src="../assets/svgs/ic-star.svg" class="h-[22px] w-[22px]" alt="">
+                                            <img src="../assets/svgs/ic-star.svg" class="h-[22px] w-[22px]" alt="">
+                                            <img src="../assets/svgs/ic-star.svg" class="h-[22px] w-[22px]" alt="">
+                                        </span>
+                                        <p class="text-base font-semibold text-dark mt-[2px]">
+                                            (12,887)
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Features -->
+                                <ul class="flex flex-col gap-4 flex-start pt-5 pb-[25px]">
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        350 Horse Power
+                                    </li>
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        4 Seat People
+                                    </li>
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        8 Speeds AT
+                                    </li>
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        A.I Full Tracking
+                                    </li>
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        Semi Autonomous
+                                    </li>
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        Apple CarPlay
+                                    </li>
+                                    <li class="flex items-center gap-3 text-base font-semibold text-dark">
+                                        <img src="../assets/svgs/ic-checkDark.svg" alt="">
+                                        Pickup Delivery
+                                    </li>
+                                </ul>
+                                <!-- Price, CTA Button -->
+                                <div class="flex items-center justify-between gap-4 pt-5">
+                                    <div>
+                                        <p class="font-bold text-dark text-[22px]">
+                                            $1,456
+                                        </p>
+                                        <p class="text-base font-normal text-secondary">
+                                            /day
+                                        </p>
+                                    </div>
+                                    <!-- Button Primary -->
+                                    <div class="w-full max-w-[70%]">
+                                        <div class="p-1 rounded-full bg-primary group">
+                                            <a href="./details.html" class="btn-primary">
+                                                <p
+                                                    class="transition-all duration-[320ms] translate-x-3 group-hover:-translate-x-10">
+                                                    Rent Now
+                                                </p>
+                                                <img src="../assets/svgs/ic-arrow-right.svg"
+                                                    class="opacity-0 group-hover:opacity-100 group-hover:translate-x-10 transition-all duration-[320ms]"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -197,6 +285,41 @@
                 </a>
             </div>
         </section>
+
+        <script src="https://unpkg.com/vue@next/dist/vue.global.js"></script>
+        <script>
+            const { createApp } = Vue
+            createApp({
+                data() {
+                    return {
+                        activeThumbnail: 0,
+                        thumbnails: [
+                            {
+                                id: 1,
+                                url: "../assets/images/car-01.webp"
+                            },
+                            {
+                                id: 2,
+                                url: "../assets/images/thumbnail-02.webp"
+                            },
+                            {
+                                id: 3,
+                                url: "../assets/images/thumbnail-03.webp"
+                            },
+                            {
+                                id: 4,
+                                url: "../assets/images/thumbnail-04.webp"
+                            },
+                        ],
+                    }
+                },
+                methods: {
+                    changeActive(id) {
+                        this.activeThumbnail = id;
+                    }
+                }
+            }).mount('#gallery')
+        </script>
 
         <script src="../scripts/script.js"></script>
     </body>
