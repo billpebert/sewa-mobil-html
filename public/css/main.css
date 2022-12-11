@@ -908,6 +908,10 @@ body{
   margin-top: 0.5rem;
 }
 
+.mt-auto{
+  margin-top: auto;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -1019,6 +1023,10 @@ body{
 
 .h-\[150px\]{
   height: 150px;
+}
+
+.h-full{
+  height: 100%;
 }
 
 .max-h-\[332px\]{
