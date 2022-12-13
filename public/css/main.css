@@ -723,6 +723,14 @@ body{
   --tw-ring-color: rgb(255 148 71 / var(--tw-ring-opacity));
 }
 
+.boxPayment input[type="radio"]:checked + label{
+  --tw-shadow-color: #4743FB;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-shadow: 0 0 0 2px #4743FB inset;
+  --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
@@ -830,6 +838,10 @@ body{
 
 .z-10{
   z-index: 10;
+}
+
+.z-20{
+  z-index: 20;
 }
 
 .col-span-2{
@@ -1197,6 +1209,10 @@ body{
 
 .transform-none{
   transform: none;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .touch-auto{
@@ -2075,10 +2091,6 @@ body{
   border-width: 1px;
 }
 
-.\!border-2{
-  border-width: 2px !important;
-}
-
 .border-x{
   border-left-width: 1px;
   border-right-width: 1px;
@@ -2137,11 +2149,6 @@ body{
 .border-grey{
   --tw-border-opacity: 1;
   border-color: rgb(216 216 228 / var(--tw-border-opacity));
-}
-
-.\!border-primary{
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(71 67 251 / var(--tw-border-opacity)) !important;
 }
 
 .bg-white{
@@ -2814,12 +2821,6 @@ body{
   mix-blend-mode: plus-lighter;
 }
 
-.shadow-\[0_0_0_2px_\#4743FB_inset\]{
-  --tw-shadow: 0 0 0 2px #4743FB inset;
-  --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -3003,9 +3004,37 @@ body[data-aos-delay='3400'] [data-aos],
   color: rgb(157 157 188 / var(--tw-text-opacity));
 }
 
+.before\:content-\[\'\'\]::before{
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.after\:absolute::after{
+  content: var(--tw-content);
+  position: absolute;
+}
+
+.after\:shadow-primary::after{
+  content: var(--tw-content);
+  --tw-shadow-color: #4743FB;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .after\:content-\[\'\/\'\]::after{
   --tw-content: '/';
   content: var(--tw-content);
+}
+
+.after\:content-\[\'\'\]::after{
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
+.after\:shadow-primary::after {
+  content: var(--tw-content);
+  --tw-shadow: 0 0 0 2px #4743FB inset;
+  --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
 .last\:after\:content-none:last-child::after{
@@ -3059,6 +3088,14 @@ body[data-aos-delay='3400'] [data-aos],
 
 .focus\:hover\:text-center:hover:focus{
   text-align: center;
+}
+
+.group:checked .group-checked\:shadow-primary{
+  --tw-shadow-color: #4743FB;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-shadow: 0 0 0 2px #4743FB inset;
+  --tw-shadow-colored: inset 0 0 0 2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .group:hover .group-hover\:-translate-x-10{

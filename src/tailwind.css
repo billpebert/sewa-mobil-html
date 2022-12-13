@@ -49,6 +49,10 @@
     .thumbnail.selected {
         @apply ring-[4px] ring-[#FF9447]
     }
+
+    .boxPayment input[type="radio"]:checked + label {
+        @apply shadow-primary
+    }
 }
 
 @layer utilities {
