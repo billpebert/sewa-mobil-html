@@ -107,7 +107,8 @@
 
                 <div class="flex items-center gap-5 lg:justify-between">
                     <!-- Form Card -->
-                    <form action="" class="bg-white p-[30px] pb-10 rounded-3xl max-w-[490px] w-full">
+                    <form action="" class="bg-white p-[30px] pb-10 rounded-3xl md:rounded-[50px] max-w-[490px] w-full"
+                        id="checkoutForm" @submit.prevent>
                         <div class="grid grid-cols-2 items-center gap-y-6 gap-x-4 lg:gap-x-[30px]">
                             <!-- Full Name -->
                             <div class="flex flex-col col-span-2 gap-3">
@@ -119,23 +120,51 @@
                                     placeholder="Insert Full Name" value="Shayna Zakirra">
                             </div>
                             <!-- Date From -->
-                            <div class="flex flex-col col-span-1 gap-3">
+                            <!-- <div class="flex flex-col col-span-1 gap-3">
                                 <label for="" class="text-base font-semibold text-dark">
                                     From
                                 </label>
-                                <input type="date" name="dateFrom" id="dateFrom"
+                                <input type="text" readonly name="dateFrom" id="dateFrom"
                                     class="text-base font-medium focus:border-primary focus:outline-none placeholder:text-secondary placeholder:font-normal px-[26px] py-4 border border-grey rounded-[50px] focus:before:appearance-none focus:before:!content-none"
-                                    placeholder="Select Date">
-                            </div>
+                                    placeholder="Select Date" @mouseover="this.showDatePicker = !this.showDatePicker"
+                                    @mouseleave="this.showDatePicker = !this.showDatePicker">
+                            </div> -->
                             <!-- Date Until -->
-                            <div class="flex flex-col col-span-1 gap-3">
+                            <!-- <div class="flex flex-col col-span-1 gap-3">
                                 <label for="" class="text-base font-semibold text-dark">
                                     Until
                                 </label>
-                                <input type="date" name="dateUntil" id="dateUntil"
+                                <input type="text" readonly name="dateUntil" id="dateUntil"
                                     class="text-base font-medium focus:border-primary focus:outline-none placeholder:text-secondary placeholder:font-normal px-[26px] py-4 border border-grey rounded-[50px] focus:before:appearance-none focus:before:!content-none"
                                     placeholder="Select Date">
+                            </div> -->
+
+                            <div class="col-span-2">
+                                <div class="grid grid-cols-2 col-span-2 gap-y-6 gap-x-4 lg:gap-x-[30px] relative"
+                                    v-slot="{ inputValue, inputEvents, isDragging }">
+                                    <div class="absolute translate-x-1/2 right-1/2 top-24">
+                                        <v-date-picker v-model="range" mode="date" color="purple" :masks="masks"
+                                            is-range></v-date-picker>
+                                    </div>
+                                    <div class="flex flex-col col-span-1 gap-3">
+                                        <label for="" class="text-base font-semibold text-dark"> From </label>
+                                        <input type="text" name="dateFrom" id="dateFrom"
+                                            class="text-base font-medium focus:border-primary focus:outline-none placeholder:text-secondary placeholder:font-normal px-[26px] py-4 border border-grey rounded-[50px]"
+                                            :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
+                                            :value="inputValue.start" v-on="inputEvents.start" placeholder="Select Date"
+                                            readonly :value="inputValue.start" v-on="inputEvents.start" />
+                                    </div>
+                                    <div class="flex flex-col col-span-1 gap-3">
+                                        <label for="" class="text-base font-semibold text-dark"> Until </label>
+                                        <input type="text" name="dateUntil" id="dateUntil"
+                                            class="text-base font-medium focus:border-primary focus:outline-none placeholder:text-secondary placeholder:font-normal px-[26px] py-4 border border-grey rounded-[50px]"
+                                            :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
+                                            :value="inputValue.end" v-on="inputEvents.end" placeholder="Select Date"
+                                            readonly :value="inputValue.end" v-on="inputEvents.end" />
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Delivery Address -->
                             <div class="flex flex-col col-span-2 gap-3">
                                 <label for="" class="text-base font-semibold text-dark">
@@ -179,8 +208,28 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Test VCalendar -->
+                        <!-- <div class="mt-5">
+                            <v-date-picker v-model="range" mode="date" is-range>
+                                <template v-slot="{ inputValue, inputEvents, isDragging }">
+                                    <div class="flex flex-col items-center justify-start sm:flex-row">
+                                        <div class="relative flex-grow">
+                                            <input class="flex-grow w-full py-1 pl-8 pr-2 bg-red-100 border rounded"
+                                                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
+                                                :value="inputValue.start" v-on="inputEvents.start" />
+                                        </div>
+                                        <div class="relative flex-grow">
+                                            <input class="flex-grow w-full py-1 pl-8 pr-2 bg-gray-100 border rounded"
+                                                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
+                                                :value="inputValue.end" v-on="inputEvents.end" />
+                                        </div>
+                                    </div>
+                                </template>
+                            </v-date-picker>
+                        </div> -->
                     </form>
-                    <img src="../assets/images/porsche_small.webp" class="max-w-[50%] hidden lg:block -mr-[100px]"
+                    <img src=" ../assets/images/porsche_small.webp" class="max-w-[50%] hidden lg:block -mr-[100px]"
                         alt="">
                 </div>
             </div>
@@ -189,6 +238,39 @@
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../scripts/script.js"></script>
+        <!-- 1. Link Vue Javascript -->
+        <script src='https://unpkg.com/vue@2.4/dist/vue.js'></script>
+
+        <!-- 2. Link VCalendar Javascript (Plugin automatically installed) -->
+        <script src='https://unpkg.com/v-calendar'></script>
+
+        <!--3. Create the Vue instance-->
+        <script>
+            new Vue({
+                el: '#checkoutForm',
+                data: {
+                    inputValue: { start: null, end: null },
+                    inputEvents: { start: null, end: null },
+                    isDragging: false,
+                    range: {
+                        start: null,
+                        end: null,
+                    },
+                    masks: {
+                        input: 'DD MM YYYY',
+                    },
+                    selectedDate: null,
+                    showDatePicker: false
+                },
+            })
+
+            $('.vc-container').addClass('!rounded-[18px] !border !border-grey')
+            $('.vc-pane-container').addClass('font-poppins')
+            $('.vc-weekday').addClass('!font-medium')
+            $('.vc-title').addClass('!text-base')
+            $('.vc-header').addClass('!mb-5')
+
+        </script>
     </body>
 
 </html>
