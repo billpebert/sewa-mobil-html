@@ -598,17 +598,11 @@ body{
   color: rgb(13 12 65 / var(--tw-text-opacity));
 }
 
-.btn-primary::before,.btn-primary::after {
-  display: none;
-}
-
 .btn-primary{
   position: relative;
   display: block;
-  display: flex;
   min-height: 47px;
-  align-items: center;
-  justify-content: center;
+  min-width: 180px;
   border-radius: 9999px;
   --tw-bg-opacity: 1;
   background-color: rgb(71 67 251 / var(--tw-bg-opacity));
@@ -616,7 +610,6 @@ body{
   padding-bottom: 0.75rem;
   padding-left: 26px;
   padding-right: 26px;
-  text-align: center;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -814,6 +807,14 @@ body{
   bottom: 0px;
 }
 
+.left-1\/2{
+  left: 50%;
+}
+
+.right-1\/2{
+  right: 50%;
+}
+
 .bottom-\[-30px\]{
   bottom: -30px;
 }
@@ -904,6 +905,10 @@ body{
   margin-top: 1.5rem;
 }
 
+.ml-auto{
+  margin-left: auto;
+}
+
 .mb-\[30px\]{
   margin-bottom: 30px;
 }
@@ -912,8 +917,8 @@ body{
   margin-bottom: 0.25rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
+.mt-\[26px\]{
+  margin-top: 26px;
 }
 
 .-mr-\[100px\]{
@@ -956,24 +961,12 @@ body{
   margin-top: 1.25rem;
 }
 
-.mt-2{
-  margin-top: 0.5rem;
-}
-
 .mt-1{
   margin-top: 0.25rem;
 }
 
-.mt-\[4px\]{
-  margin-top: 4px;
-}
-
-.ml-auto{
-  margin-left: auto;
-}
-
-.mt-\[26px\]{
-  margin-top: 26px;
+.mt-2{
+  margin-top: 0.5rem;
 }
 
 .box-border{
@@ -1105,28 +1098,12 @@ body{
   max-height: 332px;
 }
 
-.min-h-\[80px\]{
-  min-height: 80px;
-}
-
-.min-h-screen{
-  min-height: 100vh;
-}
-
-.min-h-\[100vh\]{
-  min-height: 100vh;
-}
-
-.min-h-\[calc\(100vh-135px\)\]{
-  min-height: calc(100vh - 135px);
-}
-
-.min-h-\[calc\(100vh-32px\)\]{
-  min-height: calc(100vh - 32px);
-}
-
 .min-h-\[calc\(100vh-70px\)\]{
   min-height: calc(100vh - 70px);
+}
+
+.min-h-\[80px\]{
+  min-height: 80px;
 }
 
 .w-full{
@@ -1240,6 +1217,11 @@ body{
 
 .translate-y-\[107\%\]{
   --tw-translate-y: 107%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-1\/2{
+  --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3127,6 +3109,19 @@ body[data-aos-delay='3400'] [data-aos],
   text-align: center;
 }
 
+.group:hover .group-hover\:left-\[26px\]{
+  left: 26px;
+}
+
+.group:hover .group-hover\:right-\[26px\]{
+  right: 26px;
+}
+
+.group:hover .group-hover\:translate-x-0{
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .group:hover .group-hover\:-translate-x-10{
   --tw-translate-x: -2.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3134,16 +3129,6 @@ body[data-aos-delay='3400'] [data-aos],
 
 .group:hover .group-hover\:translate-x-10{
   --tw-translate-x: 2.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:-translate-x-1{
-  --tw-translate-x: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:translate-x-1{
-  --tw-translate-x: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3287,10 +3272,6 @@ body[data-aos-delay='3400'] [data-aos],
 
   .lg\:hidden{
     display: none;
-  }
-
-  .lg\:min-h-full{
-    min-height: 100%;
   }
 
   .lg\:min-h-\[calc\(100vh-135px\)\]{
