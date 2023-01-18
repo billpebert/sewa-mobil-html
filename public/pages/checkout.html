@@ -179,6 +179,7 @@
                                     x-show="showDatepicker" x-transition>
                                     <div class="flex flex-col items-center">
 
+                                        <!-- Month -->
                                         <div class="w-full mb-5">
                                             <div class="flex items-center justify-center gap-1">
                                                 <button type="button"
@@ -205,6 +206,7 @@
                                             </div>
                                         </div>
 
+                                        <!-- Day Names -->
                                         <div class="flex flex-wrap w-full mb-3 -mx-1">
                                             <template x-for="(day, index) in DAYS" :key="index">
                                                 <div style="width: 14.26%" class="px-1">
@@ -214,6 +216,7 @@
                                             </template>
                                         </div>
 
+                                        <!-- Dates -->
                                         <div class="flex flex-wrap -mx-1">
                                             <template x-for="blankday in blankdays">
                                                 <div style="width: 14.28%"
@@ -225,7 +228,7 @@
                                                     <div @click="getDateValue(date, false)"
                                                         @mouseover="getDateValue(date, true)" x-text="date"
                                                         class="p-1 text-sm leading-loose text-center transition duration-100 ease-in-out cursor-pointer"
-                                                        :class="{'font-bold': isToday(date) == true, 'bg-primary text-white rounded-l-full': isDateFrom(date) == true, 'bg-primary text-white rounded-r-full': isDateTo(date) == true, 'bg-[#E2E1FF]': isInRange(date) == true }">
+                                                        :class="{'font-bold': isToday(date) == true, 'bg-primary text-white rounded-l-full': isDateFrom(date) == true, 'bg-primary text-white rounded-r-full': isDateTo(date) == true, 'bg-[#E2E1FF]': isInRange(date) == true, 'text-slate-300': isPast(date) == true }">
                                                     </div>
                                                 </div>
                                             </template>
